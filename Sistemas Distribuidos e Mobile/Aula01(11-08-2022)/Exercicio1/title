@@ -1,0 +1,8 @@
+Exercicio 1
+-Uma classe Automovel com as seguintes atributos:
+ *Nome do proprietario;
+ *Modelo;
+ *Placa;
+ *Ano;
+-É possível alterar o nome do proprietario e imprimir os dados do automovel.
+-Fazer uma classe que possibilite a transferencia de proprietarios.
