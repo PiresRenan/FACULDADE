@@ -1,0 +1,18 @@
+(CESGRANRIO-TJ-RO/2008) Analise as afirmativas a seguir, a respeito de sistemas distribuídos.
+
+I. Uma das principais diferenças entre um sistema distribuído e um sistema em rede é que, do 
+ponto de vista do usuário, o sistema distribuído se comporta como uma única máquina, enquanto 
+que o sistema em rede expõe ao usuário as diversas máquinas separadamente.
+II. Em um sistema distribuído, uma migração de processo entre nós do sistema pode ser feita 
+para proporcionar balanceamento de carga ou aceleração da computação, sendo esta através da 
+divisão do processo em subprocessos que executem em paralelo.
+III. Os nós de um sistema distribuído podem executar diferentes sistemas operacionais.
+
+Está(ão) correta(s) a(s) afirmativa(s):
+a.) II apenas.
+b.) I e II, apenas.
+c.) I, II e III.
+d.) II e III, apenas.
+e.) I, apenas.
+
+RESPOSTA CORRETA: "c".

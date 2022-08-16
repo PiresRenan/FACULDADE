@@ -1,0 +1,14 @@
+(CESGRANRIO-Petrobras/2006) Um sistema distribuído é definido como uma coleção de computadores independentes que se 
+apresenta ao usuário como um sistema único e consistente. Baseado nos conceitos definidos para sistemas distribuídos,
+ identifique a afirmativa ERRADA:
+
+a.) Um sistema distribuído fortemente acoplado provê um nível de integração e compartilhamento de recursos mais intenso
+e transparente ao usuário, onde vários processadores compartilham uma memória, e são gerenciados por apenas um sistema 
+operacional.
+b.) Um sistema distribuído fracamente acoplado permite que máquinas e usuários do ambiente sejam fundamentalmente 
+independentes, bem como a interação de forma limitada, quando isto for necessário, compartilhando recursos como discos e 
+impressoras, entre outros.
+c.) Uma vantagem dos sistemas distribuídos sobre os sistemas centralizados é a disponibilidade de software para este tipo 
+de ambiente.
+
+RESPOSTA CORRETA: "c".

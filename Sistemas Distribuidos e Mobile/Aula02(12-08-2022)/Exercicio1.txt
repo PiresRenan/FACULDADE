@@ -1,0 +1,16 @@
+(IADES-PG-DF/2011)Segundo Andrew Tanembaum(2007) Sistema Distribuído é uma coleção de computadores independentes 
+que se apresenta ao usuário como sistema único e consistente. Assinale a alternativa correta a respeito de um 
+sistema de informação distribuído.
+
+a.) Em um sistema de objetos distribuídos é possível invocar métodos de um objeto, ainda que este não esteja pre-
+sente no computador do usuário.
+b.) A transparência de acesso é uma característica dos sistemas distribuídos que permite que recursos sejam aces-
+sados sem que sua localização seja determinada.
+c.) Todos os computadores de uma rede executam tarefas de cliente e servidor, quando se deseja integrá-los em uma
+arquitetura de sistemas distribuídos.
+d.) Em uma rede de computadores há servidores dedicados a atender pedidos dos clientes e estes, por sua vez, têm
+função exclusiva de requisitantes.
+e.) A distribuição de tarefas se dá a partir de requisições do usuário, que indica o endereço do servidor onde de-
+seja executar tal tarefa.
+
+RESPOSTA CORRETA: "a".

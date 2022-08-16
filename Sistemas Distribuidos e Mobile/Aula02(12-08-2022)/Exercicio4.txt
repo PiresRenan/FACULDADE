@@ -1,0 +1,9 @@
+Um sistema distribuído possui vantagens em relação a um sistema não distribuído. A característica 
+que não se inclui nessa afirmativa é a:
+
+a.) velocidade
+b.) tolerância a falhas
+c.) segurança simplificada
+d.) crescimento incremental
+
+RESPOSTA CORRETA: "c".
