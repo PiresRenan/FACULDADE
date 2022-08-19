@@ -1,0 +1,6 @@
+- Um gerente de banco precisa de um software para cadastrar os seus clientes.
+- Neste cadastro será possível: inserir, remover, alterar, consultar os dados desse cliente.
+
+TABLES = 
+1. Pessoa: nome:String, idade:int ; Pessoa(), Pessoa(String, int), toString();
+2. extends-> Cliente: saldo:float ; Cliente(String, int, float), getSaldo():float, setSaldo(float), toString(String)

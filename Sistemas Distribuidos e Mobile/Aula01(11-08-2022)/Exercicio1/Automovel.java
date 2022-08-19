@@ -3,10 +3,10 @@
  */
 public class Automovel {
     // Creating the variables that will be used in the class.
-    public String nome_do_proprietario;
-    public String modelo;
-    public String placa;
-    public int ano;
+    private String nome_do_proprietario;
+    private String modelo;
+    private String placa;
+    private int ano;
 
     // A constructor.
     public Automovel(String nome_do_proprietario, String modelo, String placa, int ano){
