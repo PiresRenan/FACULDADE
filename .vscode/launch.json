@@ -1,0 +1,217 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ex3preprova",
+            "request": "launch",
+            "mainClass": "Ex03A1.ex3preprova",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch ex4preprova",
+            "request": "launch",
+            "mainClass": "Ex04A1.ex4preprova",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Ex05A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(1)",
+            "request": "launch",
+            "mainClass": "Ex06A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(2)",
+            "request": "launch",
+            "mainClass": "Ex07A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(3)",
+            "request": "launch",
+            "mainClass": "Ex08A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(4)",
+            "request": "launch",
+            "mainClass": "Ex09A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(5)",
+            "request": "launch",
+            "mainClass": "Ex10A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(6)",
+            "request": "launch",
+            "mainClass": "Ex11A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(7)",
+            "request": "launch",
+            "mainClass": "Ex12A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(8)",
+            "request": "launch",
+            "mainClass": "Ex13A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(9)",
+            "request": "launch",
+            "mainClass": "Ex14A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(10)",
+            "request": "launch",
+            "mainClass": "Ex15A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(11)",
+            "request": "launch",
+            "mainClass": "Ex16A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(12)",
+            "request": "launch",
+            "mainClass": "Ex17A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(13)",
+            "request": "launch",
+            "mainClass": "Ex18A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(14)",
+            "request": "launch",
+            "mainClass": "Ex19A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(15)",
+            "request": "launch",
+            "mainClass": "Ex20A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(16)",
+            "request": "launch",
+            "mainClass": "Ex21A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(17)",
+            "request": "launch",
+            "mainClass": "Ex22A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(18)",
+            "request": "launch",
+            "mainClass": "Ex23A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(19)",
+            "request": "launch",
+            "mainClass": "Ex24A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(20)",
+            "request": "launch",
+            "mainClass": "Ex25A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(21)",
+            "request": "launch",
+            "mainClass": "Ex26A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(22)",
+            "request": "launch",
+            "mainClass": "Ex27A1.Main",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch Principal",
+            "request": "launch",
+            "mainClass": "Principal",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch ex1preprova",
+            "request": "launch",
+            "mainClass": "ex1preprova",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch ex2preprova",
+            "request": "launch",
+            "mainClass": "ex2preprova",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "src.App",
+            "projectName": "FACULDADE_18c36e76"
+        }
+    ]
+}
