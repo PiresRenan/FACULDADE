@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch principal",
+            "request": "launch",
+            "mainClass": "principal",
+            "projectName": "FACULDADE_18c36e76"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
