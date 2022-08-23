@@ -6,7 +6,7 @@ public class App {
         String username = "root";
         String password = "13579Rock";
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Class.forName("com.mysql.cj.jdbc.Driver");
             Connection c = DriverManager.getConnection(url, username, password);
             Statement st = c.createStatement();
             ResultSet result = st.executeQuery("SELECT nome FROM pessoa;");
