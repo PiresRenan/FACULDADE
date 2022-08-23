@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.*;
-import java.util.*;
 import bd.Connector;
 import model.User;
 
@@ -15,34 +14,30 @@ public class UserDAO {
 	
 	public boolean insertUser(User user) throws SQLException {
 		
-		String sql = "INSERT INTO user (name,email,senha) VALUES(?,?,?)";
+		String sql = "INSERT INTO pessoa (nome,idade) VALUES(?,?)";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setString(1, user.getName());
-		statement.setString(2, user.getEmail());
-		statement.setString(3, user.getSenha());
+		statement.setInt(2, user.getAge());
 		int rowsInserted = statement.executeUpdate();
 		
 		return (rowsInserted > 0);
 	}
 	
-	public boolean updateUser(User user) throws SQLException {
+	public boolean updateUser() throws SQLException {
 		
-		String sql = "UPDATE user set EMAIL=?, SENHA=? WHERE id=?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, user.getEmail());
-		statement.setString(2, user.getSenha());
-		statement.setInt(3, user.getId());
-		int rowsUpdated = statement.executeUpdate();
+		Statement statement = connection.createStatement();
+        String sql = "UPDATE pessoa SET idade=26 WHERE idUser=1;";
+		int rowsUpdated = statement.executeUpdate(sql);
 		
 		return (rowsUpdated > 0);
 	}
 	
 	public boolean deleteUser(int id) throws SQLException {
 		
-		String sql = "DELETE FROM user WHERE id=?;";
+		String sql = "DELETE FROM pessoa WHERE idUser=?;";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, id);
+		statement.setInt(1,id);
 		int rowsDeleted = statement.executeUpdate();
 		
 		return (rowsDeleted > 0);
@@ -50,7 +45,7 @@ public class UserDAO {
 	
 	public User findUser(int id) throws SQLException {
 		
-		String sql = "SELECT * FROM user WHERE id=?";
+		String sql = "SELECT * FROM pessoa WHERE idUser=?";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setInt(1, id);
@@ -58,11 +53,10 @@ public class UserDAO {
 
 		if(result.next()) {
 			User user = new User(
-					result.getInt(1),
 					result.getString(2),
-					result.getString(3),
-					result.getString(4)
+					result.getInt(3)
 					);
+            System.out.println(user);
 			return user;
 		}else {
 			return null;
@@ -70,30 +64,18 @@ public class UserDAO {
 		/*return (rowsDeleted > 0);*/
 	}
 	
-	public List<User> listUser() throws SQLException {
+	public void listUser() throws SQLException {
 		
-		String sql = "SELECT * FROM user";
+		String sql = "SELECT * FROM pessoa";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
 		ResultSet result = statement.executeQuery();
 		
-		List<User> users = new ArrayList<>();
-		
 		while(result.next()) {
-			User user = new User(
-					result.getInt(1),
-					result.getString(2),
-					result.getString(3),
-					result.getString(4)
-					);
-			users.add(user);
+			System.out.println("Nome= " +result.getString("nome") +
+                               "\nIdade= " + result.getInt("idade") 
+            );
 		}
-		return users;
-		
-		/*return (rowsDeleted > 0);*/
 	}
-	
-	public void close() throws SQLException {
-		connection.close();
-	}
+
 }
