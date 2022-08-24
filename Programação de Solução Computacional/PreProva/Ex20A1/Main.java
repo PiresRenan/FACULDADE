@@ -1,7 +1,7 @@
 /*
- * 20. Faça uma programa para representar a árvore genealógica de uma família. Para tal, crie
-uma classe Pessoa que permita indicar, além de nome e idade, o pai e a mãe. Tenha em
-mente que pai e mãe também são do tipo Pessoa.
+ * 20. Faï¿½a uma programa para representar a ï¿½rvore genealï¿½gica de uma famï¿½lia. Para tal, crie
+uma classe Pessoa que permita indicar, alï¿½m de nome e idade, o pai e a mï¿½e. Tenha em
+mente que pai e mï¿½e tambï¿½m sï¿½o do tipo Pessoa.
  */
 package Ex20A1;
 
@@ -11,6 +11,7 @@ public class Main {
 		
 		Pessoa p = new Pessoa();
 		
+		System.out.println(p);
 	}
 
 }

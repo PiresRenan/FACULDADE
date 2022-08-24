@@ -11,13 +11,13 @@ public class Supermercado {
 	Estoque e = new Estoque(codPrd, codPrd, null);
 	
 	Supermercado(int qtt, int codPrd){
-		this.valor = valor;
+		// this.valor = valor;
 		this.qtt = qtt;
 		this.codPrd = codPrd;
 	}
 	
 	public int input() {
-		System.out.println("Digite o código do produto desejado: ");
+		System.out.println("Digite o cï¿½digo do produto desejado: ");
 		System.out.println("101. Bicicleta");
 		System.out.println("205. Pneu");
 		System.out.println("161. Radio");
@@ -53,7 +53,7 @@ public class Supermercado {
 	
 	@Override
 	public String toString() {
-		return "O valor total a ser pago é de: " + "R$ " +  valorTotal + "em " + qtt + "do produto escolhido." ;
+		return "O valor total a ser pago ï¿½ de: " + "R$ " +  valorTotal + "em " + qtt + "do produto escolhido." ;
 	}
 	
 }

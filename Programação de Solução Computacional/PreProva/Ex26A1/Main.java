@@ -1,5 +1,5 @@
 /*
- * 26. Adicione o registro de endereço comercial e residencial por contato na agenda disponível
+ * 26. Adicione o registro de endereï¿½o comercial e residencial por contato na agenda disponï¿½vel
 em https://github.com/leomurta/agenda
  */
 package Ex26A1;
@@ -7,7 +7,6 @@ package Ex26A1;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

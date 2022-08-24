@@ -1,5 +1,5 @@
 /*
- * 19. Faça um programa para controle de empréstimo de livros, com as classes Emprestimo,
+ * 19. Faï¿½a um programa para controle de emprï¿½stimo de livros, com as classes Emprestimo,
 Livro e Pessoa.
  */
 package Ex19A1;
@@ -7,8 +7,6 @@ package Ex19A1;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

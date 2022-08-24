@@ -1,6 +1,6 @@
 /*
- * 21. Faça um programa que calcule a área de uma figura geométrica. Aceite quatro tipos de
-figura geométrica: quadrado, retângulo, triângulo e círculo. Use herança e polimorfismo.
+ * 21. Faï¿½a um programa que calcule a ï¿½rea de uma figura geomï¿½trica. Aceite quatro tipos de
+figura geomï¿½trica: quadrado, retï¿½ngulo, triï¿½ngulo e cï¿½rculo. Use heranï¿½a e polimorfismo.
  */
 package Ex21A1;
 
@@ -10,9 +10,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		Area a = new Area();
 		
-		System.out.println("Digite a figura geométrica que deseja obter a area: ");
+		System.out.println("Digite a figura geomï¿½trica que deseja obter a area: ");
 		String figGeo = sc.nextLine();
 		figGeo = figGeo.toLowerCase();
 		
@@ -25,9 +24,9 @@ public class Main {
 		}else if(figGeo == "quadrado" || figGeo == "square" ||  figGeo == "q") {
 			
 		}else {
-			System.out.println("Valor digitado inválido.");
+			System.out.println("Valor digitado invï¿½lido.");
 		}
-		
+		sc.close();
 	}
 
 }

@@ -5,10 +5,11 @@ public class Relogio {
 	
 	Scanner sc = new Scanner(System.in);
 	private int segundos=0,horas=0,minutos=0,dias=0,segundos2;
+	// private int i;
 
-	Relogio(){
-		this.segundos = segundos;
-	}
+	// Relogio(){
+	// 	i = this.segundos = segundos;
+	// }
 	
 	public int input() {
 		System.out.println("Digite um valor para os segundos a serem calculados: ");
@@ -54,7 +55,7 @@ public class Relogio {
 	}
 	public String toString() {
 		return "O tempo dado foi: " + segundos2 + "\n"
-			  +"O tempo equivalente a isso é de: " + dias + "d " 
+			  +"O tempo equivalente a isso ï¿½ de: " + dias + "d " 
 			  + horas + ":" + minutos + ":" + segundos ;
 	}
 }

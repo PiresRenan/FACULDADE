@@ -4,9 +4,9 @@ public class Area {
 	
 	protected double a,b;
 	
-	Area(){
-		this.a = a;
-		this.b = b;
-	}
+	// Area(){
+	// 	this.a = a;
+	// 	this.b = b;
+	// }
 	
 }

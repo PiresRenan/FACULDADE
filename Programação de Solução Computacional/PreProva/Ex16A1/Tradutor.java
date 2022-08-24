@@ -6,12 +6,12 @@ public class Tradutor {
 	Scanner sc = new Scanner(System.in);
 	private int num = 0;
 	
-	Tradutor(){
-		this.num = num;
-	}
+	// Tradutor(){
+	// 	this.num = num;
+	// }
 	
 	public int input() {
-		System.out.println("Digite um valor de até 9 dígitos: ");
+		System.out.println("Digite um valor de atï¿½ 9 dï¿½gitos: ");
 		num = sc.nextInt();
 		return num;	
 	}

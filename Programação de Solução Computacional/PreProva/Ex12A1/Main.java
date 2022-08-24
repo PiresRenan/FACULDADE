@@ -1,7 +1,7 @@
 /*
- * 12. Crie dois vetores de 50 posições com valores inteiros aleatórios, ordene cada vetor
-individualmente, e combine os dois vetores gerando um novo vetor de 100 posições, de
-forma que esse novo vetor já seja criado ordenado.
+ * 12. Crie dois vetores de 50 posiï¿½ï¿½es com valores inteiros aleatï¿½rios, ordene cada vetor
+individualmente, e combine os dois vetores gerando um novo vetor de 100 posiï¿½ï¿½es, de
+forma que esse novo vetor jï¿½ seja criado ordenado.
  */
 package Ex12A1;
 
@@ -39,7 +39,7 @@ public class Main {
 		}
 		
 		for(int i = 0 ; i < 50 ; i++) {
-			for(int j = 0,temp ; j < 100 ; j++) {
+			for(int j = 0 ; j < 100 ; j++) {
 				if(v1[i] <= v2[i]) {
 					vT = v1;
 				}else {

@@ -1,13 +1,12 @@
 /*
- * 27. Refaça os exercícios 1, 2 e 3 para protegê-los de qualquer tipo de exceção que pode
-ocorrer durante a interação com o usuário.
+ * 27. Refaï¿½a os exercï¿½cios 1, 2 e 3 para protegï¿½-los de qualquer tipo de exceï¿½ï¿½o que pode
+ocorrer durante a interaï¿½ï¿½o com o usuï¿½rio.
  */
 package Ex27A1;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 

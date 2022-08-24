@@ -8,25 +8,25 @@ public class Pessoa {
 	private int age, variable;
 	private int ageA, ageB;
 	private String[] parent = {
-			                   "MÃE","PAI",
-			                   "AVÓ","AVÔ",
-			                   "BISAVÓ","BISAVÔ"
+			                   "Mï¿½E","PAI",
+			                   "AVï¿½","AVï¿½",
+			                   "BISAVï¿½","BISAVï¿½"
 	                          };
 	private String[] nameA = {
-			                  "Adriana","Eva","Kimberly","Lívia","Naomi",
+			                  "Adriana","Eva","Kimberly","Lï¿½via","Naomi",
 			                  "Marcela","Yasmin","Kate","Valquiria","Ana"
 	                         };
 	private String[] nameB = {
-			                  "Leon","Nicolau","Alexandre","Paulo","André",
-			                  "Pedro","João","Antonio","Claudio","Jubileu"
+			                  "Leon","Nicolau","Alexandre","Paulo","Andrï¿½",
+			                  "Pedro","Joï¿½o","Antonio","Claudio","Jubileu"
 	                         };
 	Scanner sc = new Scanner(System.in);
 	Random r = new Random();
 	
-	Pessoa(){
-		this.name = name;
-		this.age = age;
-	}
+	// Pessoa(){
+	// 	this.name = name;
+	// 	this.age = age;
+	// }
 
 	
 	public String input() {
@@ -39,11 +39,11 @@ public class Pessoa {
 	}
 	
 	public int inputHowMany() {
-		System.out.println("Quantos ancestrais tu quer conhecer? 1(para para PAI e MÃE), 2(para AVÔ e AVÓ),"
-				+ "3(para BISAVÔ e BISAVÓ)");
+		System.out.println("Quantos ancestrais tu quer conhecer? 1(para para PAI e Mï¿½E), 2(para AVï¿½ e AVï¿½),"
+				+ "3(para BISAVï¿½ e BISAVï¿½)");
 		variable = sc.nextInt();
 		if(variable == 1) {
-			System.out.println("Selecionou pai e mãe. ");
+			System.out.println("Selecionou pai e mï¿½e. ");
 			nameSort();
 			ageSort();
 		}
