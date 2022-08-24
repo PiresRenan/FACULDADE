@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.*;
+
+import javax.swing.JOptionPane;
+
 import bd.Connector;
 import model.User;
 
@@ -23,32 +26,34 @@ public class UserDAO {
 		return (rowsInserted > 0);
 	}
 	
-	public boolean updateUser() throws SQLException {
+	public boolean updateUser(String novo_nome, int nova_idade, String nome) throws SQLException {
 		
-		Statement statement = connection.createStatement();
-        String sql = "UPDATE pessoa SET idade=26 WHERE idUser=1;";
+        String sql = "UPDATE pessoa SET nome=?, idade=? WHERE nome="+ nome + ";";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(2, novo_nome);
+		statement.setInt(3, nova_idade);
 		int rowsUpdated = statement.executeUpdate(sql);
 		
 		return (rowsUpdated > 0);
 	}
 	
-	public boolean deleteUser(int id) throws SQLException {
+	public boolean deleteUser(String nome) throws SQLException {
 		
-		String sql = "DELETE FROM pessoa WHERE idUser=?;";
+		String sql = "DELETE FROM pessoa WHERE nome=?;";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1,id);
+		statement.setString(2,nome);
 		int rowsDeleted = statement.executeUpdate();
 		
 		return (rowsDeleted > 0);
 	}
 	
-	public User findUser(int id) throws SQLException {
+	public User findUser(String nome) throws SQLException {
 		
-		String sql = "SELECT * FROM pessoa WHERE idUser=?";
+		String sql = "SELECT * FROM pessoa WHERE nome=?";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, id);
+		statement.setString(2, nome);
 		ResultSet result = statement.executeQuery();
 
 		if(result.next()) {
@@ -72,7 +77,7 @@ public class UserDAO {
 		ResultSet result = statement.executeQuery();
 		
 		while(result.next()) {
-			System.out.println("Nome= " +result.getString("nome") +
+			JOptionPane.showMessageDialog(null,"Nome= " +result.getString("nome") +
                                "\nIdade= " + result.getInt("idade") 
             );
 		}

@@ -1,108 +1,108 @@
 package view;
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import java.awt.SystemColor;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
 
 public class Login {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
 	private JLabel lblNewLabel_2;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            System.err.println(ex);
-        } 
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	// A constructor.
 	public Login() {
 		initialize();
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * It creates a new JFrame, sets its properties, adds a JLabel, a JTextField, a JPasswordField, a
+	 * JButton, and another JLabel to the JFrame, and adds an ActionListener to the JButton
 	 */
 	private void initialize() {
+
 		frame = new JFrame();
+
+		JLabel lblNewLabel = new JLabel("LOGIN");
+		JLabel lblNewLabel_1 = new JLabel("SENHA");
+
+		JButton btnNewButton = new JButton("ENTRAR");
+
+		txtLogin = new JTextField();
+		txtSenha = new JPasswordField();
+
+		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setBackground(SystemColor.desktop);
 		frame.setBounds(100, 100, 400, 336);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
         frame.setLocationRelativeTo(null);
+
+		lblNewLabel_2 = new JLabel("Login Banco");
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 30));
+		lblNewLabel_2.setBounds(109, 28, 186, 53);
 		
-		JLabel lblNewLabel = new JLabel("LOGIN");
 		lblNewLabel.setBounds(21, 115, 46, 29);
-		frame.getContentPane().add(lblNewLabel);
+
+		lblNewLabel_1.setBounds(21, 171, 46, 29);
 		
-		txtLogin = new JTextField();
 		txtLogin.setBounds(76, 112, 279, 32);
-		frame.getContentPane().add(txtLogin);
 		txtLogin.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("SENHA");
-		lblNewLabel_1.setBounds(21, 171, 46, 29);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		txtSenha = new JPasswordField();
 		txtSenha.setBounds(76, 168, 279, 32);
+
+		btnNewButton.setBounds(139, 233, 104, 43);
+
+		frame.getContentPane().add(lblNewLabel);
+		frame.getContentPane().add(lblNewLabel_1);
+		frame.getContentPane().add(lblNewLabel_2);
+		frame.getContentPane().add(txtLogin);
 		frame.getContentPane().add(txtSenha);
+		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton = new JButton("ENTRAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(checkLogin(txtLogin.getText(), new String(txtSenha.getPassword()))) {
-					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!");
+					try {
+						for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+							if ("Nimbus".equals(info.getName())) {
+								javax.swing.UIManager.setLookAndFeel(info.getClassName());
+								break;
+							}
+						}
+					} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+						System.err.println(ex);
+					}
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								InSystem window = new InSystem();
+								window.frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
+					frame.dispose();
 				}else {
 					JOptionPane.showMessageDialog(null, "Dados inválidos!");
 				}
 			}
 		});
-		btnNewButton.setBounds(139, 233, 104, 43);
-		frame.getContentPane().add(btnNewButton);
-		
-		lblNewLabel_2 = new JLabel("Login Banco");
-		lblNewLabel_2.setForeground(new Color(0, 0, 0));
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 30));
-		lblNewLabel_2.setBounds(109, 28, 186, 53);
-		frame.getContentPane().add(lblNewLabel_2);
+
 	}
 	
+	/**
+	 * It returns true if the login is "Renan" and the password is "123456"
+	 * 
+	 * @param login The username to be used for authentication.
+	 * @param senha The password to be checked.
+	 * @return A boolean value.
+	 */
 	public boolean checkLogin(String login, String senha) {
-		return login.equals("usuario") && senha.equals("123");
+		return login.equals("Renan") && senha.equals("123456");
 	}
 }
