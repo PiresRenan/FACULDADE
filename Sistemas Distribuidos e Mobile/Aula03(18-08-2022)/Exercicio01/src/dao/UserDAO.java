@@ -26,12 +26,13 @@ public class UserDAO {
 		return (rowsInserted > 0);
 	}
 	
-	public boolean updateUser(String novo_nome, int nova_idade, String nome) throws SQLException {
+	public boolean updateUser(String novo_nome, int nova_idade, int id) throws SQLException {
 		
-        String sql = "UPDATE pessoa SET nome=?, idade=? WHERE nome="+ nome + ";";
+        String sql = "UPDATE pessoa SET nome=?, idade=? WHERE idUser=?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(2, novo_nome);
-		statement.setInt(3, nova_idade);
+		statement.setString(1, novo_nome);
+		statement.setInt(2, nova_idade);
+		statement.setInt(3, id);
 		int rowsUpdated = statement.executeUpdate(sql);
 		
 		return (rowsUpdated > 0);
@@ -42,7 +43,7 @@ public class UserDAO {
 		String sql = "DELETE FROM pessoa WHERE nome=?;";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(2,nome);
+		statement.setString(1,nome);
 		int rowsDeleted = statement.executeUpdate();
 		
 		return (rowsDeleted > 0);
@@ -53,15 +54,15 @@ public class UserDAO {
 		String sql = "SELECT * FROM pessoa WHERE nome=?";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(2, nome);
+		statement.setString(1, nome);
 		ResultSet result = statement.executeQuery();
 
 		if(result.next()) {
 			User user = new User(
-					result.getString(2),
-					result.getInt(3)
+					result.getInt(1),
+					result.getInt(2),
+					result.getString(3)
 					);
-            System.out.println(user);
 			return user;
 		}else {
 			return null;

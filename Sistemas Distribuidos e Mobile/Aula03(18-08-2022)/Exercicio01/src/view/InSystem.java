@@ -91,6 +91,11 @@ public class InSystem {
 				} catch (Exception x) {
 					JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro no Delete", JOptionPane.ERROR_MESSAGE);
 				}
+				try {
+					objeto.listUser();
+				} catch (SQLException x) {
+					JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro na demonstração de dados", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 
@@ -103,8 +108,8 @@ public class InSystem {
 					if (confirm == 0){
 						String nome_novo = JOptionPane.showInputDialog(null, "Digite o novo nome: ");
 						int idade_novo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a nova idade: "));
-						objeto.updateUser(nome_novo, idade_novo, user.getName());
-						JOptionPane.showMessageDialog(null, "Alteração concluida com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+						objeto.updateUser(nome_novo, idade_novo, user.getId());
+						JOptionPane.showMessageDialog(null, "Alteração concluída com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 					}
 				} catch (SQLException e1) {
 					e1.printStackTrace();
