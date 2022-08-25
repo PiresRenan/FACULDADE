@@ -1,18 +1,8 @@
-## Getting Started
+- Um gerente de bancos precisa de um software para cadastrar os seus clientes.
+- Neste cadastro será possível: inserir, remover, alterar, consultar os dados desse cliente.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+  Classe 1 = "Pessoa" = (atributos: nome"str", idade"int"), (metodos: Pessoa(), Pessoa(Str, int), toString()).
 
-## Folder Structure
+  Classe 2 = "Cliente" = (attr: saldo"float"), (metodos: Cliente(Str,int,float), getSaldo(), toString())
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+  Classe 2 extends Classe 1.
