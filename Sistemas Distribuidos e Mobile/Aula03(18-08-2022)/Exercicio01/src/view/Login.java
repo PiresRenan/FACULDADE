@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import methods.MetodosBase;
 import java.awt.event.*;
 import java.awt.*;
 
@@ -26,12 +27,14 @@ public class Login {
 
 		JLabel lblNewLabel = new JLabel("LOGIN");
 		JLabel lblNewLabel_1 = new JLabel("SENHA");
+		lblNewLabel_2 = new JLabel("Login Banco");
 
 		JButton btnNewButton = new JButton("ENTRAR");
 
 		txtLogin = new JTextField();
 		txtSenha = new JPasswordField();
 
+		// Setting the properties of the JFrame.
 		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setBackground(SystemColor.desktop);
@@ -40,7 +43,7 @@ public class Login {
 		frame.getContentPane().setLayout(null);
         frame.setLocationRelativeTo(null);
 
-		lblNewLabel_2 = new JLabel("Login Banco");
+		// Setting the properties of the JLabel lblNewLabel_2.
 		lblNewLabel_2.setForeground(new Color(0, 0, 0));
 		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel_2.setBounds(109, 28, 186, 53);
@@ -56,6 +59,7 @@ public class Login {
 
 		btnNewButton.setBounds(139, 233, 104, 43);
 
+		// It adds the components to the JFrame.
 		frame.getContentPane().add(lblNewLabel);
 		frame.getContentPane().add(lblNewLabel_1);
 		frame.getContentPane().add(lblNewLabel_2);
@@ -65,27 +69,13 @@ public class Login {
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				// Checking if the login is "Renan" and the password is "123456". If it is, it will open the
+				// InSystem window. If it isn't, it will show a message dialog saying "Dados inválidos!" (Invalid
+				// data!).
 				if(checkLogin(txtLogin.getText(), new String(txtSenha.getPassword()))) {
-					try {
-						for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-							if ("Nimbus".equals(info.getName())) {
-								javax.swing.UIManager.setLookAndFeel(info.getClassName());
-								break;
-							}
-						}
-					} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-						System.err.println(ex);
-					}
-					EventQueue.invokeLater(new Runnable() {
-						public void run() {
-							try {
-								InSystem window = new InSystem();
-								window.frame.setVisible(true);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}
-					});
+					MetodosBase.tema();
+					InSystem window = new InSystem();
+					window.frame.setVisible(true);
 					frame.dispose();
 				}else {
 					JOptionPane.showMessageDialog(null, "Dados inválidos!");
@@ -103,6 +93,6 @@ public class Login {
 	 * @return A boolean value.
 	 */
 	public boolean checkLogin(String login, String senha) {
-		return login.equals("Renan") && senha.equals("123456");
+		return login.equals("") && senha.equals("");
 	}
 }

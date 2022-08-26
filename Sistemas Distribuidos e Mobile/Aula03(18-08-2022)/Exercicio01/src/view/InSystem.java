@@ -3,7 +3,7 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
-import dao.UserDAO;
+import methods.MetodosDatabase;
 import model.User;
 
 import java.awt.event.*;
@@ -24,7 +24,7 @@ public class InSystem {
 	 */
 	private void initialize() {
 
-		UserDAO objeto = new UserDAO();
+		MetodosDatabase objeto = new MetodosDatabase();
 
 		frame = new JFrame();
 
@@ -71,7 +71,7 @@ public class InSystem {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							InsertData window = new InsertData();
+							Inserir window = new Inserir();
 							window.frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();

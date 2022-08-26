@@ -1,26 +1,28 @@
-package dao;
+package methods;
 
 import java.sql.*;
 
 import javax.swing.JOptionPane;
 
-import bd.Connector;
+import databaseConnection.Connector;
+import model.Cliente;
 import model.User;
 
-public class UserDAO {
+public class MetodosDatabase {
 
 	Connection connection;
 	
-	public UserDAO(){
+	public MetodosDatabase(){
 		connection = Connector.getConnection();
 	}
 	
-	public boolean insertUser(User user) throws SQLException {
+	public boolean insertUser(Cliente cliente) throws SQLException {
 		
-		String sql = "INSERT INTO pessoa (nome,idade) VALUES(?,?)";
+		String sql = "INSERT INTO cliente (nome,idade,saldo) VALUES(?,?,?)";
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, user.getName());
-		statement.setInt(2, user.getAge());
+		statement.setString(1, cliente.getNome());
+		statement.setInt(2, cliente.getIdade());
+		statement.setFloat(3, cliente.getSaldo());
 		int rowsInserted = statement.executeUpdate();
 		
 		return (rowsInserted > 0);

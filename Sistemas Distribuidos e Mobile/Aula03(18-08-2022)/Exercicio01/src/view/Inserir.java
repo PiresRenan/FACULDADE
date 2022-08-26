@@ -3,20 +3,20 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
-import dao.UserDAO;
+import methods.MetodosDatabase;
 import model.User;
 
 import java.awt.event.*;
 
 
-public class InsertData {
+public class Inserir {
 
 	JFrame frame;
 	private JTextField txtNome;
 	private JTextField txtIdade;
 	private JTextField txtSaldo;
 
-	public InsertData() {
+	public Inserir() {
 		initialize();
 	}
 
@@ -85,7 +85,7 @@ public class InsertData {
 				try {
 					User novo_cliente = new User(txtNome.getText(), Integer.parseInt(txtIdade.getText()));
 				System.out.println(novo_cliente.getName() + novo_cliente.getAge());
-				UserDAO objeto_cadastro = new UserDAO();
+				MetodosDatabase objeto_cadastro = new MetodosDatabase();
 				try {
 					objeto_cadastro.insertUser(novo_cliente);
 				} catch (Exception ea) {
