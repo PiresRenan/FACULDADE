@@ -22,6 +22,7 @@ public class InSystem {
 	private void initialize() {
 
 		frame = new JFrame();
+		MetodosBase executor = new MetodosBase();
 
 		JLabel lblNewLabel = new JLabel("Bem vindo ao sistema");
 
@@ -60,40 +61,17 @@ public class InSystem {
 			}
 		});
 
-		// btnRemover.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		String delete_user = JOptionPane.showInputDialog(null, "Quem deseja remover?");
-		// 		try {
-		// 			objeto.deleteUser(delete_user);
-		// 			JOptionPane.showMessageDialog(null, "Usuario " + delete_user + " foi excluído com sucesso.", "Deletado", JOptionPane.INFORMATION_MESSAGE);
-		// 		} catch (Exception x) {
-		// 			JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro no Delete", JOptionPane.ERROR_MESSAGE);
-		// 		}
-		// 		try {
-		// 			objeto.listUser();
-		// 		} catch (SQLException x) {
-		// 			JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro na demonstração de dados", JOptionPane.ERROR_MESSAGE);
-		// 		}
-		// 	}
-		// });
+		btnRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				executor.remover();
+			}
+		});
 
-		// btnAlterar.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		String nome = JOptionPane.showInputDialog(null, "Qual usuario deseja alterar?");
-		// 		try {
-		// 			User user = objeto.findUser(nome);
-		// 			int confirm = JOptionPane.showConfirmDialog(null, "O usuario que deseja alterar é " + user + " ?", "Alterar", JOptionPane.YES_NO_OPTION);
-		// 			if (confirm == 0){
-		// 				String nome_novo = JOptionPane.showInputDialog(null, "Digite o novo nome: ");
-		// 				int idade_novo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a nova idade: "));
-		// 				objeto.updateUser(nome_novo, idade_novo, user.getId());
-		// 				JOptionPane.showMessageDialog(null, "Alteração concluída com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-		// 			}
-		// 		} catch (SQLException e1) {
-		// 			e1.printStackTrace();
-		// 		}
-		// 	}
-		// });
+		btnAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				executor.alterar();
+			}
+		});
 
 		// btnConsultar.addActionListener(new ActionListener() {
 		// 	public void actionPerformed(ActionEvent e) {
