@@ -1,5 +1,9 @@
 package methods;
 
+import java.sql.*;
+import javax.swing.*;
+import model.*;
+
 public class MetodosBase {
 
     /**
@@ -16,6 +20,18 @@ public class MetodosBase {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             System.err.println(ex);
         }
+    }
+
+    public boolean inserir(Cliente cliente){
+        MetodosDatabase db = new MetodosDatabase();
+        try {
+            db.insertUser(cliente);
+            return true;
+        } 
+        catch (SQLException x) {
+                JOptionPane.showMessageDialog(null, x);
+        }
+        return false;
     }
 
 

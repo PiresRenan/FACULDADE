@@ -24,6 +24,17 @@ public class MetodosDatabase {
 		
 		return (rowsInserted > 0);
 	}
+
+	public boolean deleteUser(String nome) throws SQLException {
+		
+		String sql = "DELETE FROM cliente WHERE nome=?;";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setString(1,nome);
+		int rowsDeleted = statement.executeUpdate();
+		
+		return (rowsDeleted > 0);
+	}
 	
 	// public boolean updateUser(String novo_nome, int nova_idade, int id) throws SQLException {
 		
@@ -35,17 +46,6 @@ public class MetodosDatabase {
 	// 	int rowsUpdated = statement.executeUpdate(sql);
 		
 	// 	return (rowsUpdated > 0);
-	// }
-	
-	// public boolean deleteUser(String nome) throws SQLException {
-		
-	// 	String sql = "DELETE FROM pessoa WHERE nome=?;";
-		
-	// 	PreparedStatement statement = connection.prepareStatement(sql);
-	// 	statement.setString(1,nome);
-	// 	int rowsDeleted = statement.executeUpdate();
-		
-	// 	return (rowsDeleted > 0);
 	// }
 	
 	// public User findUser(String nome) throws SQLException {

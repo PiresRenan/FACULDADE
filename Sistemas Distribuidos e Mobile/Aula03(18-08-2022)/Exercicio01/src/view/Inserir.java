@@ -5,12 +5,12 @@ import methods.*;
 import model.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.SQLException;
 
 public class Inserir {
 
 	JFrame frame;
 	Cliente cliente;
+	MetodosBase m = new MetodosBase();
 	private JTextField txtNome;
 	private JTextField txtIdade;
 	private JTextField txtSaldo;
@@ -26,7 +26,6 @@ public class Inserir {
 		
 		// It's creating the components.
 		frame = new JFrame();
-		MetodosDatabase db = new MetodosDatabase();
 
 		JLabel lblNewLabel = new JLabel("Novo Cliente");
 		JLabel lblNewLabel_1 = new JLabel("Nome");
@@ -84,34 +83,32 @@ public class Inserir {
 			public void actionPerformed(ActionEvent e) {
 
 				cliente = new Cliente(txtNome.getText(), Integer.parseInt(txtIdade.getText()), Float.parseFloat(txtSaldo.getText()));
-				try {
-					if (db.insertUser(cliente)) {
-						int confirma = JOptionPane.showConfirmDialog(null, "Cadastro realizado.\nDeseja realizar novo cadastro?");
-						switch(confirma){
-							case 0:
-								txtNome.setText("");
-								txtNome.requestFocus();
-								txtIdade.setText("");
-								txtSaldo.setText("");
-								break;
-							case 1:
-								MetodosBase.tema();
-								InSystem window = new InSystem();
-			 					window.frame.setVisible(true);
-								frame.dispose();
-								break;
-							case 2:
-								frame.dispose();
-								break;
-						}
-					} else {
-						JOptionPane.showMessageDialog(null, "Algo deu errado!\nVerifique se todos os campos foram devidamente preenchidos.", "Erro: dados inválidos", JOptionPane.ERROR_MESSAGE);
+
+				if (m.inserir(cliente)) {
+					int confirma = JOptionPane.showConfirmDialog(null, "Cadastro realizado.\nDeseja realizar novo cadastro?");
+					switch(confirma){
+						case 0:
+							txtNome.setText("");
+							txtNome.requestFocus();
+							txtIdade.setText("");
+							txtSaldo.setText("");
+							break;
+						case 1:
+							MetodosBase.tema();
+							InSystem window = new InSystem();
+			 				window.frame.setVisible(true);
+							frame.dispose();
+							break;
+						case 2:
+							frame.dispose();
+							break;
 					}
-				} catch (SQLException x) {
-						JOptionPane.showMessageDialog(null, x);
 				}
-			 }
-		 });
+				else {
+						JOptionPane.showMessageDialog(null, "Algo deu errado!\nVerifique se todos os campos foram devidamente preenchidos.", "Erro: dados inválidos", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 	}
 
 }
