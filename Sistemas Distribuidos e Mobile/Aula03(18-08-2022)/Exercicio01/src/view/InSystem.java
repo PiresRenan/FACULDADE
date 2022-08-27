@@ -73,15 +73,11 @@ public class InSystem {
 			}
 		});
 
-		// btnConsultar.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		try {
-		// 			objeto.listUser();
-		// 		} catch (SQLException e1) {
-		// 			e1.printStackTrace();
-		// 		}
-		// 	}
-		// });
+		btnConsultar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				executor.mostrar();
+			}
+		});
 
 	}
 

@@ -1,6 +1,9 @@
 package methods;
 
 import java.sql.*;
+
+import javax.swing.JOptionPane;
+
 // import javax.swing.*;
 import databaseConnection.Connector;
 import model.Cliente;
@@ -59,30 +62,25 @@ public class MetodosDatabase {
 	
 	public boolean updateUser(Cliente cliente) throws SQLException {
 		
-        String sql = "UPDATE cliente SET nome=?, idade=?, saldo=? WHERE idUser=?;";
+        String sql = "UPDATE `bancodb`.`cliente` SET `nome` = '"+ cliente.getNome() +"', `idade` = '"+ cliente.getIdade() +"', `saldo` = '"+ cliente.getSaldo() +"' WHERE (`idUser` = '"+cliente.getId()+"');";
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, cliente.getNome());
-		statement.setInt(2, cliente.getIdade());
-		statement.setFloat(3, cliente.getSaldo());
-		statement.setInt(4, cliente.getId());
-		System.out.println(sql);
 		int rowsUpdated = statement.executeUpdate(sql);
 		
 		return (rowsUpdated > 0);
 	}
 	
-	// public void listUser() throws SQLException {
+	public void listUser() throws SQLException {
 		
-	// 	String sql = "SELECT * FROM pessoa";
+		String sql = "SELECT * FROM cliente";
 		
-	// 	PreparedStatement statement = connection.prepareStatement(sql);
-	// 	ResultSet result = statement.executeQuery();
+		PreparedStatement statement = connection.prepareStatement(sql);
+		ResultSet result = statement.executeQuery();
 		
-	// 	while(result.next()) {
-	// 		JOptionPane.showMessageDialog(null,"Nome= " +result.getString("nome") +
-    //                            "\nIdade= " + result.getInt("idade") 
-    //         );
-	// 	}
-	// }
+		while(result.next()) {
+			JOptionPane.showMessageDialog(null,"Cliente nº " + result.getString(1) + "\nNome= " +result.getString("nome") +
+                               "\nIdade= " + result.getInt("idade")+ "\nSaldo= US$ " + result.getFloat("saldo") 
+            );
+		}
+	}
 
 }

@@ -18,7 +18,7 @@ public class MetodosBase {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            System.err.println(ex);
+            JOptionPane.showMessageDialog(null, ex, "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -26,6 +26,7 @@ public class MetodosBase {
         MetodosDatabase db = new MetodosDatabase();
         try {
             db.insertUser(cliente);
+            mostrar();
             return true;
         } 
         catch (SQLException x) {
@@ -40,6 +41,7 @@ public class MetodosBase {
 		try {
             if (db.deleteUser(delete_user)) {
                 JOptionPane.showMessageDialog(null, "Usuario " + delete_user + " foi excluído com sucesso.", "Deletado", JOptionPane.PLAIN_MESSAGE);
+                mostrar();
             } 
             else {
                 JOptionPane.showMessageDialog(null, "Usuario " + delete_user + " não encontrado.", "Erro Delete", JOptionPane.ERROR_MESSAGE);
@@ -60,8 +62,10 @@ public class MetodosBase {
                 case 0:
                     cliente.setNome(JOptionPane.showInputDialog(null, "Digite o novo nome: "));
 				    cliente.setIdade(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a nova idade: ")));
+				    cliente.setSaldo(Float.parseFloat(JOptionPane.showInputDialog(null, "Digite o novo saldo: ")));
                     if (db.updateUser(cliente)) {
                         JOptionPane.showMessageDialog(null, "Alteração concluída com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                        mostrar();
                     } else {
                         JOptionPane.showMessageDialog(null, "Ocorreu um erro.", "Erro", JOptionPane.ERROR_MESSAGE);
                     }
@@ -72,9 +76,18 @@ public class MetodosBase {
             }
 		}
         catch (SQLException e1) {
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, e1, "ERRO", JOptionPane.ERROR_MESSAGE);
 		}
         return false;
+    }
+
+    public void mostrar(){
+        MetodosDatabase db = new MetodosDatabase();
+        try {
+            db.listUser();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e, "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 }
