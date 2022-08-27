@@ -1,17 +1,16 @@
 package view;
 
-import java.awt.*;
 import javax.swing.*;
-
-import methods.MetodosDatabase;
-import model.User;
-
+import methods.*;
+import model.*;
+import java.awt.*;
 import java.awt.event.*;
-
+import java.sql.SQLException;
 
 public class Inserir {
 
 	JFrame frame;
+	Cliente cliente;
 	private JTextField txtNome;
 	private JTextField txtIdade;
 	private JTextField txtSaldo;
@@ -27,6 +26,7 @@ public class Inserir {
 		
 		// It's creating the components.
 		frame = new JFrame();
+		MetodosDatabase db = new MetodosDatabase();
 
 		JLabel lblNewLabel = new JLabel("Novo Cliente");
 		JLabel lblNewLabel_1 = new JLabel("Nome");
@@ -82,45 +82,36 @@ public class Inserir {
 
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				cliente = new Cliente(txtNome.getText(), Integer.parseInt(txtIdade.getText()), Float.parseFloat(txtSaldo.getText()));
 				try {
-					User novo_cliente = new User(txtNome.getText(), Integer.parseInt(txtIdade.getText()));
-				System.out.println(novo_cliente.getName() + novo_cliente.getAge());
-				MetodosDatabase objeto_cadastro = new MetodosDatabase();
-				try {
-					objeto_cadastro.insertUser(novo_cliente);
-				} catch (Exception ea) {
-					JOptionPane.showMessageDialog(null, ea);
-				}
-				int confirma = JOptionPane.showConfirmDialog(null, "Cadastro realizado.\nDeseja realizar novo cadastro?");
-				
-				if (confirma == 1) {
-					try {
-						for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-							if ("Nimbus".equals(info.getName())) {
-								javax.swing.UIManager.setLookAndFeel(info.getClassName());
+					if (db.insertUser(cliente)) {
+						int confirma = JOptionPane.showConfirmDialog(null, "Cadastro realizado.\nDeseja realizar novo cadastro?");
+						switch(confirma){
+							case 0:
+								txtNome.setText("");
+								txtNome.requestFocus();
+								txtIdade.setText("");
+								txtSaldo.setText("");
 								break;
-							}
-						}
-					} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-						System.err.println(ex);
-					}
-					EventQueue.invokeLater(new Runnable() {
-						public void run() {
-							try {
+							case 1:
+								MetodosBase.tema();
 								InSystem window = new InSystem();
-								window.frame.setVisible(true);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
+			 					window.frame.setVisible(true);
+								frame.dispose();
+								break;
+							case 2:
+								frame.dispose();
+								break;
 						}
-					});
-					frame.dispose();
-				} 
-				} catch (Exception a) {
-					JOptionPane.showMessageDialog(null, "Opa, parece que algo está faltando!", "Erro", JOptionPane.ERROR_MESSAGE);
+					} else {
+						JOptionPane.showMessageDialog(null, "Algo deu errado!\nVerifique se todos os campos foram devidamente preenchidos.", "Erro: dados inválidos", JOptionPane.ERROR_MESSAGE);
+					}
+				} catch (SQLException x) {
+						JOptionPane.showMessageDialog(null, x);
 				}
-			}
-		});
+			 }
+		 });
 	}
 
 }

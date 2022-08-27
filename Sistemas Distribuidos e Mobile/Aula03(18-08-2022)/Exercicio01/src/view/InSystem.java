@@ -2,12 +2,9 @@ package view;
 
 import java.awt.*;
 import javax.swing.*;
-
-import methods.MetodosDatabase;
-import model.User;
-
+import methods.*;
+// import model.*;
 import java.awt.event.*;
-import java.sql.SQLException;
 
 public class InSystem {
 
@@ -23,8 +20,6 @@ public class InSystem {
 	 * to it
 	 */
 	private void initialize() {
-
-		MetodosDatabase objeto = new MetodosDatabase();
 
 		frame = new JFrame();
 
@@ -58,74 +53,57 @@ public class InSystem {
 
 		btnInsert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-						if ("Nimbus".equals(info.getName())) {
-							javax.swing.UIManager.setLookAndFeel(info.getClassName());
-							break;
-						}
-					}
-				} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-					System.err.println(ex);
-				} 
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Inserir window = new Inserir();
-							window.frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				MetodosBase.tema();
+				Inserir window = new Inserir();
+				window.frame.setVisible(true);
 				frame.dispose();
 			}
 		});
 
-		btnRemover.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String delete_user = JOptionPane.showInputDialog(null, "Quem deseja remover?");
-				try {
-					objeto.deleteUser(delete_user);
-					JOptionPane.showMessageDialog(null, "Usuario " + delete_user + " foi excluído com sucesso.", "Deletado", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception x) {
-					JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro no Delete", JOptionPane.ERROR_MESSAGE);
-				}
-				try {
-					objeto.listUser();
-				} catch (SQLException x) {
-					JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro na demonstração de dados", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		});
+		// btnRemover.addActionListener(new ActionListener() {
+		// 	public void actionPerformed(ActionEvent e) {
+		// 		String delete_user = JOptionPane.showInputDialog(null, "Quem deseja remover?");
+		// 		try {
+		// 			objeto.deleteUser(delete_user);
+		// 			JOptionPane.showMessageDialog(null, "Usuario " + delete_user + " foi excluído com sucesso.", "Deletado", JOptionPane.INFORMATION_MESSAGE);
+		// 		} catch (Exception x) {
+		// 			JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro no Delete", JOptionPane.ERROR_MESSAGE);
+		// 		}
+		// 		try {
+		// 			objeto.listUser();
+		// 		} catch (SQLException x) {
+		// 			JOptionPane.showMessageDialog(null, "Algo deu errado\n"+x, "Erro na demonstração de dados", JOptionPane.ERROR_MESSAGE);
+		// 		}
+		// 	}
+		// });
 
-		btnAlterar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = JOptionPane.showInputDialog(null, "Qual usuario deseja alterar?");
-				try {
-					User user = objeto.findUser(nome);
-					int confirm = JOptionPane.showConfirmDialog(null, "O usuario que deseja alterar é " + user + " ?", "Alterar", JOptionPane.YES_NO_OPTION);
-					if (confirm == 0){
-						String nome_novo = JOptionPane.showInputDialog(null, "Digite o novo nome: ");
-						int idade_novo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a nova idade: "));
-						objeto.updateUser(nome_novo, idade_novo, user.getId());
-						JOptionPane.showMessageDialog(null, "Alteração concluída com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-					}
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-			}
-		});
+		// btnAlterar.addActionListener(new ActionListener() {
+		// 	public void actionPerformed(ActionEvent e) {
+		// 		String nome = JOptionPane.showInputDialog(null, "Qual usuario deseja alterar?");
+		// 		try {
+		// 			User user = objeto.findUser(nome);
+		// 			int confirm = JOptionPane.showConfirmDialog(null, "O usuario que deseja alterar é " + user + " ?", "Alterar", JOptionPane.YES_NO_OPTION);
+		// 			if (confirm == 0){
+		// 				String nome_novo = JOptionPane.showInputDialog(null, "Digite o novo nome: ");
+		// 				int idade_novo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a nova idade: "));
+		// 				objeto.updateUser(nome_novo, idade_novo, user.getId());
+		// 				JOptionPane.showMessageDialog(null, "Alteração concluída com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+		// 			}
+		// 		} catch (SQLException e1) {
+		// 			e1.printStackTrace();
+		// 		}
+		// 	}
+		// });
 
-		btnConsultar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					objeto.listUser();
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-			}
-		});
+		// btnConsultar.addActionListener(new ActionListener() {
+		// 	public void actionPerformed(ActionEvent e) {
+		// 		try {
+		// 			objeto.listUser();
+		// 		} catch (SQLException e1) {
+		// 			e1.printStackTrace();
+		// 		}
+		// 	}
+		// });
 
 	}
 

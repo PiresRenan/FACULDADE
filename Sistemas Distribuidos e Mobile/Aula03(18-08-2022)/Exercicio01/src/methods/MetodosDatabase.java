@@ -1,12 +1,9 @@
 package methods;
 
 import java.sql.*;
-
-import javax.swing.JOptionPane;
-
+// import javax.swing.*;
 import databaseConnection.Connector;
 import model.Cliente;
-import model.User;
 
 public class MetodosDatabase {
 
@@ -28,62 +25,62 @@ public class MetodosDatabase {
 		return (rowsInserted > 0);
 	}
 	
-	public boolean updateUser(String novo_nome, int nova_idade, int id) throws SQLException {
+	// public boolean updateUser(String novo_nome, int nova_idade, int id) throws SQLException {
 		
-        String sql = "UPDATE pessoa SET nome=?, idade=? WHERE idUser=?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, novo_nome);
-		statement.setInt(2, nova_idade);
-		statement.setInt(3, id);
-		int rowsUpdated = statement.executeUpdate(sql);
+    //     String sql = "UPDATE pessoa SET nome=?, idade=? WHERE idUser=?;";
+	// 	PreparedStatement statement = connection.prepareStatement(sql);
+	// 	statement.setString(1, novo_nome);
+	// 	statement.setInt(2, nova_idade);
+	// 	statement.setInt(3, id);
+	// 	int rowsUpdated = statement.executeUpdate(sql);
 		
-		return (rowsUpdated > 0);
-	}
+	// 	return (rowsUpdated > 0);
+	// }
 	
-	public boolean deleteUser(String nome) throws SQLException {
+	// public boolean deleteUser(String nome) throws SQLException {
 		
-		String sql = "DELETE FROM pessoa WHERE nome=?;";
+	// 	String sql = "DELETE FROM pessoa WHERE nome=?;";
 		
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1,nome);
-		int rowsDeleted = statement.executeUpdate();
+	// 	PreparedStatement statement = connection.prepareStatement(sql);
+	// 	statement.setString(1,nome);
+	// 	int rowsDeleted = statement.executeUpdate();
 		
-		return (rowsDeleted > 0);
-	}
+	// 	return (rowsDeleted > 0);
+	// }
 	
-	public User findUser(String nome) throws SQLException {
+	// public User findUser(String nome) throws SQLException {
 		
-		String sql = "SELECT * FROM pessoa WHERE nome=?";
+	// 	String sql = "SELECT * FROM pessoa WHERE nome=?";
 		
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, nome);
-		ResultSet result = statement.executeQuery();
+	// 	PreparedStatement statement = connection.prepareStatement(sql);
+	// 	statement.setString(1, nome);
+	// 	ResultSet result = statement.executeQuery();
 
-		if(result.next()) {
-			User user = new User(
-					result.getInt(1),
-					result.getInt(2),
-					result.getString(3)
-					);
-			return user;
-		}else {
-			return null;
-		}
-		/*return (rowsDeleted > 0);*/
-	}
+	// 	if(result.next()) {
+	// 		User user = new User(
+	// 				result.getInt(1),
+	// 				result.getInt(2),
+	// 				result.getString(3)
+	// 				);
+	// 		return user;
+	// 	}else {
+	// 		return null;
+	// 	}
+	// 	/*return (rowsDeleted > 0);*/
+	// }
 	
-	public void listUser() throws SQLException {
+	// public void listUser() throws SQLException {
 		
-		String sql = "SELECT * FROM pessoa";
+	// 	String sql = "SELECT * FROM pessoa";
 		
-		PreparedStatement statement = connection.prepareStatement(sql);
-		ResultSet result = statement.executeQuery();
+	// 	PreparedStatement statement = connection.prepareStatement(sql);
+	// 	ResultSet result = statement.executeQuery();
 		
-		while(result.next()) {
-			JOptionPane.showMessageDialog(null,"Nome= " +result.getString("nome") +
-                               "\nIdade= " + result.getInt("idade") 
-            );
-		}
-	}
+	// 	while(result.next()) {
+	// 		JOptionPane.showMessageDialog(null,"Nome= " +result.getString("nome") +
+    //                            "\nIdade= " + result.getInt("idade") 
+    //         );
+	// 	}
+	// }
 
 }
