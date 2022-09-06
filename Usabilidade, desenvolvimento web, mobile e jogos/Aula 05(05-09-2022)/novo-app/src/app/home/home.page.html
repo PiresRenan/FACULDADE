@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>
+      Boa Noite, {{pessoa ? pessoa.nome + " " + pessoa.sobrenome : visitante}}
+    </ion-title>
+    <ion-progress-bar color="primary" value="0.25"></ion-progress-bar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div id="container">
+
+    <h3>{{texto}}</h3>
+
+    <ion-text style="color: {{cor}}"><br>
+
+      <h2> Texto colorido </h2>
+    </ion-text><br>
+
+    <ion-item>
+      <ion-label position="floating">digite seu cpf</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <strong>
+      <p>aqui se escreve e mostra!!!{{currentValue}} </p>
+    </strong>
+
+    <ion-toggle [(ngModel)]="switch"></ion-toggle>
+    <p>Valor da chave: {{switch ? 'Ligado' : 'Desligado'}} </p>
+
+    <!-- <ion-item>
+      <ion-label>Renan</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Santos</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pires</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>aaaa</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>iiiiiiiiiiiiii</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item> -->
+
+    <!-- <p>Método de escolha: {{ paymentMethod }}</p>
+    <ion-radio-group [(ngModel)]="paymentMethod">
+      <ion-item>
+        <ion-label>Dinheiro</ion-label>
+        <ion-radio slot="start" value="cash"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Crédito</ion-label>
+        <ion-radio slot="start" value="creditas"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Débito</ion-label>
+        <ion-radio slot="start" value="debts"></ion-radio>
+      </ion-item>
+    </ion-radio-group> -->
+
+    <ion-item>
+      <ion-label>Qual será o método de pagamento? </ion-label>
+      <ion-select placeholder="Escolha:">
+        <ion-select-option value="cash"> Dinheiro </ion-select-option>
+        <ion-select-option value="debit"> Débito </ion-select-option>
+        <ion-select-option value="credit"> Crédito </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div>
+      <ion-button (click)="aumentar()">Aumentar</ion-button>
+      <ion-button (click)="diminuir()">Diminuir</ion-button>
+      <ion-button (click)="resetar()">Resetar</ion-button>
+      <h2>O valor do Contador é: {{valorNumerico}} </h2>
+    </div>
+
+
+
+
+  </div>
+</ion-content>
+
