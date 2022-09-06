@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      CALCULADORA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large" style="text-align: center;">CALCULADORA</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <div>
+        <h1 style="color: black; font-size:3.5rem;">{{show}}</h1>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="one()">1</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="two()">2</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="three()">3</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="plus()">+</ion-button>
+        <br>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="four()">4</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="five()">5</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="six()">6</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="less()">-</ion-button>
+        <br>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="seven()">7</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="eight()">8</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="nine()">9</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="mul()">X</ion-button>
+        <br>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="nothing()">#</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="zero()">0</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="divide()">/</ion-button>
+        <ion-button style="width: 3.5rem; height: 3.5rem; font-size:1.75rem;" (click)="equals()">=</ion-button>
+      </div>
   </div>
 </ion-content>
