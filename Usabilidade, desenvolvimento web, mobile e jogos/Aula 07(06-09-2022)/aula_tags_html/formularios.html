@@ -1,0 +1,73 @@
+<section>
+    <header>
+        <h1>Formulário de Inscrição</h1>
+    </header>
+
+    <hr>
+
+    <form action="">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome">
+
+            <br><br>
+
+            <label for="nasc">Data de Nascimento:</label>
+            <input type="date" name="nasc" max="2022-09-06"
+            min="2020-01-01">
+
+            <br><br>
+
+            <label for="cpf">CPF</label>
+            <input type="number" name="cpf" min="0" max="99999999999">
+
+            <br><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email">
+
+            <br><br>
+            
+            Sexo:
+            <input type="radio" name="genero" value="Masculino">
+            <label for="genero">Masculino</label>
+
+            <input type="radio" name="genero" value="Feminino">
+            <label for="genero">Feminino</label>
+
+            <input type="radio" name="genero" value="Outro">
+            <label for="genero">Outro</label>
+
+            <p>Você possui algum tipo deficiência?</p>
+
+            <input type="checkbox" value="nenhuma" name="nenhuma">
+            <label for="nenhuma ">Nenhuma</label>
+
+            <input type="checkbox" value="fisica" name="fisica">
+            <label for="fisica ">Física</label>
+
+            <input type="checkbox" value="visual" name="visual">
+            <label for="visual ">Visual</label>
+
+            <input type="checkbox" value="auditiva" name="auditiva">
+            <label for="auditiva ">Auditiva</label>
+            
+            <br><br>
+            <label for="estado">Selecione o estado:</label>
+            <select name="estado">
+                <option value="" disabled selected>Selecione</option>
+
+                <option value="São Paulo">São Paulo</option>
+                <option value="Ceará">Ceará</option>
+                <option value="Rio Grande do Sul">RS</option>
+                <option value="Amazonas">Amazonas</option>
+            </select>
+        </fieldset>
+
+        <br>
+        <button type="submit">Enviar dados</button>
+        <button type="reset">Limpar</button>
+    </form>
+</section>
