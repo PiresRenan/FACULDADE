@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable max-len */
 import { Component } from '@angular/core';
 import { CheckboxControlValueAccessor } from '@angular/forms';
 
@@ -9,10 +11,10 @@ interface IProduto {
 
 // 3.a- interface criada para modelar o objeto "entrega".
 interface IEntrega {
-  status: Status; 
+  status: Status;
 }
 // 3.b- Tipo criado para garantir que o atributo/propriedade da interface "IEntrega" só possa conter um dos três valores declarados pelo tipo.
-type Status = "preparando" | "emRota" | "finalizada";
+type Status = 'preparando' | 'emRota' | 'finalizada';
 
 // 6- Interface criada para modelar o array "lista", usada na aplicação criada para listar tarefas. Este array armazena as tarefas e sua prorpiedade "length"(comprimento) preenche/atualiza a propriedade "tarefasTotais".
 interface ITarefa {
@@ -29,22 +31,22 @@ interface ITarefa {
 export class HomePage {
 
   // 1- propriedade criada para representar a nota exibida no exemplo da diretiva *ngIf presente na camada de apresentação. Ela é exibida usando o bind de interpolação.
-  public nota = 10
+  public nota = 10;
 
   // 2- Propriedade do tipo array de produtos que implementa a interface "IProduto", usada no exemplo da diretiva "*ngFor" para exibir a listagem de consoles presentes no Array.
   public produtos: IProduto[] = [
     // {nome: "PlayStation 5", preco: 4500},
     // {nome: "Xbox Series X", preco: 3500},
     // {nome: "Nintendo Switch", preco: 1850},
-    {nome: "Switch Oled", preco: 2500}
+    {nome: 'Switch Oled', preco: 2500}
   ];
 
   // 3- Propriedade é um objeto usado para exemplificar a aplicação da diretiva "*ngSwitch", que tinha como exemplo um sistema de status de entrega.
   public entrega: IEntrega = {
-    status: "emRota"
+    status: 'emRota'
   };
 
-  // 4- Propriedade usada no exemplo da diretiva "[style]". 
+  // 4- Propriedade usada no exemplo da diretiva "[style]".
   public isBlue = false;
 
   // 5- Propriedade usada no exemplo da diretiva "[class]". O exemplo faz uso da classe "texto-vermelho" que está no arquivo "home.page.scss"
@@ -59,6 +61,12 @@ export class HomePage {
 
   public tarefasTotais = 0;
 
+  // 7- Propriedade usada no exemplo de "pipes". Este pipe deixa o texto em caixa alta. 
+  public meuTexto = 'texto para teste';
+
+  // 8- Propriedade usada no pipe responsavel por deixar o numero no estilo moeda.
+  public dinheiro = 5000; 
+
   // Exercicio
   // 6.a- Método de inserção de tarefas. O método é chamado no evento "click" do botão "inserir".
   inserir(tarefa: string): void {
@@ -67,10 +75,11 @@ export class HomePage {
       return;
     }
     // 6.c- Cria um objeto que armazena os dados da tarefa que será inserida no array "lista".
-    const novaTarefa: ITarefa {
+    const novaTarefa: ITarefa = {
       nome: tarefa,
-      concluido:false
+      concluido: false
     };
+
     // 6.d- Uso do método de array "push", que insere um elemento no fim da fila(no caso, a fila é o array "lista").
     this.lista.push(novaTarefa);
     // 6.e- Após a tarefa ser criada, o valor do input passa a ser uma string vazia para limpar o input com o texto da tarefa, que está vinculado através de um binding feito com a diretiva "[(ngModel)]", caracterizando um "two way data bind" assunto da aula passada.
@@ -83,6 +92,10 @@ export class HomePage {
     // 6.h- Cria um novo array chamado "concluidas", que recebe apenas as tarefas que tem o atributo "concluido" com o valor true. O filtro é feito com o método de array chamado "filter". Ele retorna um novo array filtrado. O parametro "t" representa os elementos dentro do array lista. Na sequencia, digo que o novo array deve conter apenas elementos com o atributo "concluido" como true.
     const concluidas = this.lista.filter(t => t.concluido === true);
     this.tarefasConcluidas = concluidas.length;
+  }
+
+  limpar_tarefas(): void {
+    this.lista = [];
   }
 
 
