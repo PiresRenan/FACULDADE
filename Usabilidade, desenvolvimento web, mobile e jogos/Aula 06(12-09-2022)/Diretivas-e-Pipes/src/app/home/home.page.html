@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Diretivas e Pipes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header collapse="condense">
+  <ion-toolbar color="dark">
+    <ion-title size="medium">Bom dia,<br>
+      Aula de diretivas e pipes.
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- exemplo diretiva *ngIf -->
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <strong><b>Sua nota é: {{ nota }}</b></strong>
+
+    <ion-card color="danger" *ngIf="nota >= 0 && nota <= 4; else recuperar">
+      <ion-card-content>
+        Você está reprovado!
+      </ion-card-content>
+    </ion-card>
+
+    <!-- chamada da função else -->
+    <ng-template #recuperar>
+      <ion-card color="warning" *ngIf="nota >= 4 && nota <= 6; else aprovado">
+        <ion-card-content>
+          Você está abaixo da média minima!
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #aprovado>
+      <ion-card color="success" *ngIf="nota >= 6 && nota <= 8; else honra">
+        <ion-card-content>
+          Você passou!
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #honra>
+      <ion-card color="primary" *ngIf="nota >= 8 && nota <= 10;">
+        <ion-card-content>
+          Parabéns! Você atingiu nota máxima! 
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <!-- 2- Exemplo da diretiva "*ngFor" para exibir uma lista. -->
+    <br>
+    <ion-list>
+      <ion-item *ngFor="let produto of produtos">
+        <ion-label>
+          <ion-avatar>
+            <img src="https://cdn.pocket-lint.com/r/s/x1920/assets/images/154021-games-news-buyer-s-guide-best-games-console-2020-should-you-get-an-xbox-playstation-or-nintendo-switch-image11-pdijuoea6m.jpg" alt="console image">
+          </ion-avatar>
+          O console {{ produto.nome }} custa {{ produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div [ngSwitch]="entrega.status">
+      <p *ngSwitchCase="'preparando'"><strong>Preparando pedido.</strong></p>
+      <p *ngSwitchCase="'emRota'"><strong>Pedido a caminho.</strong></p>
+      <p *ngSwitchCase="'finalizada'"><strong>Pedido entregue.</strong></p>
+      <p *ngSwitchDefault><strong>O que houve?</strong></p>
+    </div>
+
+    <!-- 4- diretiva "[style]" -->
+    <!-- <p [style.color]="isBlue ? 'blue' : 'blue'">________________________</p> -->
+
+    <!-- 5- diretiva "[class]" -->
+    <h2>
+      <span [class]="{'texto-vermelho': isRed}">Copyright 2022 | Dispositivos móveis</span>
+    </h2>
+
+    <!-- 6 Exercicio -->
+    <ion-input type="text" [(ngModel)]="input" placeholder="Digite a tarefa"></ion-input>
+    <ion-button (click)="inserir(input)">Inserir</ion-button>
+
+    <p>Total: {{ tarefasTotais }} Concluidas: {{ tarefasConcluidas }}</p>
+
+    <ul *ngFor="let tarefa of lista">
+      <li>Tarefa: {{ tarefa.nome }} Concluída <input type="checkbox" [(ngModel)]="tarefa.concluido" (change)="concluida"></li>
+    </ul>
+
+    <ion-button (click)="limpar_tarefas()">
+      limpar tarefas
+    </ion-button>
+
+  </div>
+</ion-content>

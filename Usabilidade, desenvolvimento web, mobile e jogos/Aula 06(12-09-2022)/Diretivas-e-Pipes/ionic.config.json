@@ -1,0 +1,7 @@
+{
+  "name": "Diretivas-e-Pipes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
