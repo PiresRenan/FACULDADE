@@ -80,46 +80,35 @@ body {
     color: #fff;
     text-align: left;
   }
-
-  .slider label {
-    background-color: #000;
-    bottom: 10px;
-    cursor: pointer;
-    display: block;
-    height: 10px;
-    position: absolute;
-    width: 10px;
-    z-index: 10;
-}
-
-.slider li:nth-child(1) label {
-    left: 10px;
-}
-
-.slider li:nth-child(2) label {
-    left: 40px;
-}
-
-.slider li:nth-child(3) label {
-    left: 70px;
-}
-
-.slider li {
-    list-style: none;
-    position: absolute;
-}
-
-.slider img {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-}
   
   #title .container-fluid {
     padding: 3% 15% 7%;
   }
+  #testimonials {
+    background-color: #ef8172;
+  }
   
+  .testimonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+  
+  .contents-image {
+    width: 18rem;
+    height: 13.5rem;
+    margin: 20px;
+  }
+  
+  
+  #press {
+    background-color: #ef8172;
+    padding-bottom: 3%;
+  }
+  
+  .press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+  }
   /* Title Image */
   
   .title-image {
@@ -152,33 +141,6 @@ body {
     color: #ff4c68;
   }
   
-  /* Testimonial Section */
-  
-  #testimonials {
-    background-color: #ef8172;
-  }
-  
-  .testimonial-text {
-    font-size: 3rem;
-    line-height: 1.5;
-  }
-  
-  .testimonial-image {
-    width: 10%;
-    border-radius: 100%;
-    margin: 20px;
-  }
-  
-  
-  #press {
-    background-color: #ef8172;
-    padding-bottom: 3%;
-  }
-  
-  .press-logo {
-    width: 15%;
-    margin: 20px 20px 50px;
-  }
   
   /* Pricing Section */
   
