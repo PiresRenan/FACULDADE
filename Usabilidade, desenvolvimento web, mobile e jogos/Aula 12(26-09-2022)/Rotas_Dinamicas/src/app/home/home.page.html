@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Agenda
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <ion-list>
+      <ion-item ngFor="let pessoa of dados">
+        <ion-icon color="success" name="person-sharp"></ion-icon>
+        <ion-label [routerLink]="['/detalhes', pessoa.id]">{{ pessoa.nome }}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button color="success" (click)="exibirModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
