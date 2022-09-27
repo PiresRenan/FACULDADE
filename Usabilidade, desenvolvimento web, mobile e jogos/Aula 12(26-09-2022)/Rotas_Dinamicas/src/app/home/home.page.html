@@ -10,7 +10,7 @@
 
   <div id="container">
     <ion-list>
-      <ion-item ngFor="let pessoa of dados">
+      <ion-item *ngFor="let pessoa of dados">
         <ion-icon color="success" name="person-sharp"></ion-icon>
         <ion-label [routerLink]="['/detalhes', pessoa.id]">{{ pessoa.nome }}</ion-label>
       </ion-item>

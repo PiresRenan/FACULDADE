@@ -21,7 +21,7 @@ export class DetalhesPage implements OnInit {
   constructor(route: ActivatedRoute, dadosServico: DadosService) { 
     this.rota = route
     this.servico = dadosServico;
-    this.dados = this.dados.buscarDados();
+    this.dados = this.servico.buscarDados();
   }
 
   ngOnInit() {
