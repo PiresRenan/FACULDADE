@@ -1,0 +1,7 @@
+{
+  "name": "Request_API",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
