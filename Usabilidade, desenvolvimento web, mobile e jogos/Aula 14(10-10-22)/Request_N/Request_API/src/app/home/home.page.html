@@ -1,20 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Requisições Web-API </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content>
+    <ion-input [(ngModel)]="id" placeholder="ID"></ion-input>
+    <ion-button (click)="buscarPorId(id)">Buscar</ion-button>
+
+    <ion-input [(ngModel)]="name" placeholder="Nome"></ion-input>
+    <ion-input [(ngModel)]="price" placeholder="Price"></ion-input>
+    <ion-button (click)="salvar()">Salvar</ion-button>
+
+    <ion-button color="success" (click)="atualizar(id)">Atualizar</ion-button>
+  </ion-content>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list *ngFor="let product of products">
+      <ion-item>
+        <ion-label>
+          {{ product.id }} - {{ product.name }} - {{ product.price | currency:
+          'BRL' }}
+        </ion-label>
+        <ion-button color="danger" (click)="remover(product.id)"
+          >Deletar</ion-button
+        >
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
