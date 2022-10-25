@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro Empresa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/" method="post" >
+        <div id="form">
+            <fieldset>
+                <legend>Cadastro Empresa</legend>
+            <div class="name">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" required>
+            </div>
+            <div>
+                <label for="date">Data de Nascimento</label>
+                <input type="date" name="date" required>
+            </div>
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" placeholder="email" required>
+            </div>
+            <div>
+                <label >Qual é seu cargo?</label>
+            </div>
+            <div>
+                <input type="radio" name="gerente">Gerente
+                <input type="radio" name="analista">Analista
+                <input type="radio" name="estagio">Estágio
+            </div>
+        </div>
+        <button type="submit" class="botao">Enviar</button>
+    </form>
+</body>
+</html>

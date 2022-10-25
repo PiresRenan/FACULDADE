@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+.botao {
+    margin-left: 50px;
+    background-color: #ffa500;
+    width: 25rem;
+}
+
+#form {
+    margin-left: 50px;
+    width: 25rem;
+}
+
+.name>input{
+    background-color: #ffa500;
+}
