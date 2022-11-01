@@ -1,0 +1,7 @@
+{
+  "name": "cam_VN",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
